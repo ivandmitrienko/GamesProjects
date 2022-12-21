@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "dev": "webpack --mode development",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -16,5 +17,9 @@
   "bugs": {
     "url": "https://github.com/ivandmitrienko/GamesProjects/issues"
   },
-  "homepage": "https://github.com/ivandmitrienko/GamesProjects#readme"
+  "homepage": "https://github.com/ivandmitrienko/GamesProjects#readme",
+  "devDependencies": {
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1"
+  }
 }
