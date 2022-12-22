@@ -1,5 +1,6 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
+const FileManagerPlugin = require('filemanager-webpack-plugin');
 
 module.exports = {
     entry: path.join(__dirname, 'src', 'index.js'),
@@ -7,10 +8,26 @@ module.exports = {
         path: path.join(__dirname, 'dist'),
         filename: 'index.[contenthash:8].js',
     },
+    module: {
+        rules: [
+            {
+                test: /\.js$/,
+                use: 'babel-loader',
+                exclude: /node_modules/,
+            },
+        ],
+    },
     plugins: [
         new HtmlWebpackPlugin({
             template: path.join(__dirname, 'src', 'template.html'),
             filename: 'index.html',
+        }),
+        new FileManagerPlugin({
+            events: {
+                onStart: {
+                    delete: ['dist'],
+                },
+            },
         }),
     ],
     devServer: {
