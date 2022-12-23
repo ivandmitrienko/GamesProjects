@@ -8,7 +8,7 @@ module.exports = {
     output: {
         path: path.join(__dirname, 'dist'),
         filename: 'index.[contenthash:8].js',
-        assetModuleFilename: 'images/[name][ext]',
+        assetModuleFilename: path.join('images', '[name].[contenthash][ext]'),
     },
     module: {
         rules: [
@@ -22,21 +22,15 @@ module.exports = {
                 use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'sass-loader'],
             },
             {
-                test: /\.(png|jpg|jpeg|gif)$/i,
+                test: /\.(png|jpg|jpeg|gif)$/,
                 type: 'asset/resource',
-                generator: {
-                    filename: 'images/[name][ext]',
-                },
             },
             {
                 test: /\.svg$/,
                 type: 'asset/resource',
                 generator: {
-                    filename:'images/[name][ext]',
+                    filename: path.join('icons', '[name].[contenthash][ext]'),
                 },
-                // generator: {
-                //     filename: path.join('icons', '[name].[contenthash][ext]'),
-                // },
             },
         ],
     },
