@@ -23,11 +23,11 @@ module.exports = {
             },
             {
                 test: /\.(png|jpg|jpeg|gif)$/i,
-                loader: 'file-loader',
+                type: 'asset/resource',
             },
             {
                 test: /\.svg$/,
-                loader: 'file-loader',
+                type: 'asset/resource',
                 generator: {
                     filename: path.join('icons', '[name].[contenthash][ext]'),
                 },
