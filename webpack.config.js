@@ -8,7 +8,7 @@ module.exports = {
     output: {
         path: path.join(__dirname, 'dist'),
         filename: 'index.[contenthash:8].js',
-        assetModuleFilename: path.join('images', '[name].[contenthash][ext]'),
+        // assetModuleFilename: path.join('images', '[name].[contenthash][ext]'),
     },
         module: {
             rules: [
