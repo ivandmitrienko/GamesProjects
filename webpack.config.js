@@ -65,6 +65,7 @@ module.exports = {
         new FileIncludeWebpackPlugin(
             {
                 source: './src/templates',
+                destination: 'templates',
             },
         )
     ],
