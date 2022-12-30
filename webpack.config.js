@@ -3,6 +3,7 @@ const path = require('path');
 const FileManagerPlugin = require('filemanager-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
+const HtmlWebpackPartialsPlugin = require('html-webpack-partials-plugin');
 
 module.exports = {
     entry: path.join(__dirname, 'src', 'index.js'),
@@ -48,8 +49,8 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: path.join(__dirname, 'src', 'template.html'),   
-            filename: 'index.html'
+            template: path.join(__dirname, 'src', 'template.html'),
+            filename: 'index.html',
         }),
         new FileManagerPlugin({
             events: {
@@ -60,6 +61,11 @@ module.exports = {
         }),
         new MiniCssExtractPlugin({
             filename: '[name].[contenthash:8].css',
+        }),
+        new HtmlWebpackPartialsPlugin({
+            path: './src/templates/head.html',
+            location: 'templates',
+            template_filename: ['index.html'],
         }),
     ],
     devServer: {
