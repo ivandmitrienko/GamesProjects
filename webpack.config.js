@@ -51,6 +51,7 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: path.join(__dirname, 'src', 'template.html'),
             filename: 'index.html',
+            // minify: true
         }),
         new FileManagerPlugin({
             events: {
@@ -64,7 +65,7 @@ module.exports = {
         }),
         new HtmlWebpackPartialsPlugin({
             path: './src/templates/head.html',
-            location: 'templates',
+            location: 'header',
             template_filename: ['index.html'],
         }),
     ],
