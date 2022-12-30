@@ -7,13 +7,13 @@ const HtmlWebpackPartialsPlugin = require('html-webpack-partials-plugin');
 
 class WatchPartials {
     apply(compiler) {
-      compiler.hooks.afterCompile.tap("Custom watcher", (compilation) => {
-        [`${paths.src}/templates`].forEach((path) =>
-          compilation.contextDependencies.add(path)
-        );
-      });
+        compiler.hooks.afterCompile.tap("Custom watcher", (compilation) => {
+            [`${paths.src}/templates`].forEach((path) =>
+                compilation.contextDependencies.add(path)
+            );
+        });
     }
-  }
+}
 
 module.exports = {
     entry: path.join(__dirname, 'src', 'index.js'),
