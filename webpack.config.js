@@ -3,6 +3,7 @@ const path = require('path');
 const FileManagerPlugin = require('filemanager-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
+const FileIncludeWebpackPlugin = require('file-include-webpack-plugin');
 
 module.exports = {
     entry: path.join(__dirname, 'src', 'index.js'),
@@ -61,6 +62,11 @@ module.exports = {
         new MiniCssExtractPlugin({
             filename: '[name].[contenthash:8].css',
         }),
+        new FileIncludeWebpackPlugin(
+            {
+                source: './src/templates',
+            },
+        )
     ],
     devServer: {
         watchFiles: path.join(__dirname, 'src'),
