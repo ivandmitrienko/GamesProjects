@@ -3,11 +3,6 @@ const path = require('path');
 const FileManagerPlugin = require('filemanager-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
-const fs = require('fs');
-
-const files = {
-    file1: fs.readFileSync('./src/templates/head.html', { encoding: 'utf-8' })
-};
 
 module.exports = {
     entry: path.join(__dirname, 'src', 'index.js'),
@@ -53,11 +48,8 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: path.join(__dirname, 'src', 'template.html'),
-            filename: 'index.html',
-            templateParameters: {
-                files
-            }
+            template: path.join(__dirname, 'src', 'template.html'),   
+            filename: 'index.html'
         }),
         new FileManagerPlugin({
             events: {
