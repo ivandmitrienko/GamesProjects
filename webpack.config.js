@@ -5,6 +5,16 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
 const HtmlWebpackPartialsPlugin = require('html-webpack-partials-plugin');
 
+class WatchPartials {
+    apply(compiler) {
+      compiler.hooks.afterCompile.tap("Custom watcher", (compilation) => {
+        [`${paths.src}/templates`].forEach((path) =>
+          compilation.contextDependencies.add(path)
+        );
+      });
+    }
+  }
+
 module.exports = {
     entry: path.join(__dirname, 'src', 'index.js'),
     output: {
@@ -48,6 +58,7 @@ module.exports = {
         ],
     },
     plugins: [
+        new WatchPartials(),
         new HtmlWebpackPlugin({
             template: path.join(__dirname, 'src', 'template.html'),
             filename: 'index.html',
