@@ -65,6 +65,10 @@ module.exports = {
         new FileIncludeWebpackPlugin(
             {
                 source: './src/templates',
+                replace: [{
+                    regex: /\[\[FILE_VERSION]]/,
+                    to: 'v=1.0.0',
+                }],
                 destination: 'templates',
             },
         )
