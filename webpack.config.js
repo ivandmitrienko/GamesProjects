@@ -67,6 +67,9 @@ module.exports = {
             location: 'header',
             template_filename: ['index.html'],
         }),
+        new ExtraWatchWebpackPlugin({
+            dirs: path.resolve(__dirname, 'src'),
+        }),
     ],
     devServer: {
         watchFiles: path.join(__dirname, 'src'),
