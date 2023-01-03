@@ -5,6 +5,8 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
 const HtmlWebpackPartialsPlugin = require('html-webpack-partials-plugin');
 
+const ExtraWatchWebpackPlugin = require('extra-watch-webpack-plugin');
+
 module.exports = {
     entry: path.join(__dirname, 'src', 'index.js'),
     output: {
