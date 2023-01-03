@@ -64,7 +64,7 @@ module.exports = {
             filename: '[name].[contenthash:8].css',
         }),
         new HtmlWebpackPartialsPlugin({
-            path: './src/partials/head.html',
+            path: './src/partials/header.html',
             location: 'header',
             template_filename: ['index.html'],
         }),
