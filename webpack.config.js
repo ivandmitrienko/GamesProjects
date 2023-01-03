@@ -50,7 +50,7 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: path.join(__dirname, 'src', 'template.html'),
+            template: path.join(__dirname, 'src', 'index.html'),
             filename: 'index.html',
         }),
         new FileManagerPlugin({
@@ -64,7 +64,7 @@ module.exports = {
             filename: '[name].[contenthash:8].css',
         }),
         new HtmlWebpackPartialsPlugin({
-            path: './src/templates/head.html',
+            path: './src/partials/head.html',
             location: 'header',
             template_filename: ['index.html'],
         }),
