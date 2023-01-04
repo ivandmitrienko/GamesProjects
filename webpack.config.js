@@ -67,6 +67,9 @@ module.exports = {
             path: './src/partials/header.html',
             location: 'header',
             template_filename: ['index.html'],
+            options: {
+                appName: 'ggg',
+            }
         }),
         new ExtraWatchWebpackPlugin({
             dirs: path.resolve(__dirname, 'src'),
