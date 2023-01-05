@@ -52,6 +52,7 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: path.join(__dirname, 'src', 'index.html'),
             filename: 'index.html',
+            minify: true
         }),
         new FileManagerPlugin({
             events: {
