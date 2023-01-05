@@ -70,6 +70,7 @@ module.exports = {
             template_filename: ['index.html'],
             options: {
                 buttContact: 'CONTACT US',
+                buttMore: 'MORE',
             }
         }),
         new ExtraWatchWebpackPlugin({

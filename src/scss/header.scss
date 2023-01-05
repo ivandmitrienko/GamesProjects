@@ -45,4 +45,21 @@
             }
         }
     }
+
+    &-content {
+        max-width: 551px;
+        max-height: 454px;
+        & h1 {
+            font-family: "Harabara";
+            font-size: 44px;
+            line-height: 60px;
+            color: #FFFFFF;
+            letter-spacing: 0.06em;
+        }
+        & p{
+            @extend .MontserratWeight;
+            font-family: "Montserrat";
+            line-height: 26px;
+        }
+    }
 }
