@@ -72,6 +72,14 @@ module.exports = {
                 appName: 'ggg',
             }
         }),
+        new HtmlWebpackPartialsPlugin({
+            path: './src/partials/header.html',
+            location: 'header',
+            template_filename: ['index.html'],
+            options: {
+                appName: 'CONTACT US',
+            }
+        }),
         new ExtraWatchWebpackPlugin({
             dirs: path.resolve(__dirname, 'src'),
         }),
