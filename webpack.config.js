@@ -77,7 +77,7 @@ module.exports = {
             location: 'header',
             template_filename: ['index.html'],
             options: {
-                appName: 'CONTACT US',
+                buttContact: 'CONTACT US',
             }
         }),
         new ExtraWatchWebpackPlugin({
