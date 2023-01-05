@@ -69,14 +69,6 @@ module.exports = {
             location: 'header',
             template_filename: ['index.html'],
             options: {
-                appName: 'ggg',
-            }
-        }),
-        new HtmlWebpackPartialsPlugin({
-            path: './src/partials/header.html',
-            location: 'header',
-            template_filename: ['index.html'],
-            options: {
                 buttContact: 'CONTACT US',
             }
         }),
