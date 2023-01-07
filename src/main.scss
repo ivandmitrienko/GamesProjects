@@ -1,14 +1,32 @@
-@import './scss/zeroing.scss';
-@import './scss/header.scss';
+@import "./scss/zeroing.scss";
+@import "./scss/header.scss";
+@import "./scss/home.scss";
 
-.container{
-    max-width: 1600px;
+.container {
     width: 100%;
     margin: 0 auto;
-    &  header{
+    & header {
         width: 100%;
         height: 939px;
-        background: url('./images/image1.svg') no-repeat; 
-        padding: 0 120px;     
+        background: url("./images/image1.svg") no-repeat;
+    }
+    & .contacts {
+        position: fixed;
+        right: 0;
+        top: calc(50% - 192px/2);
+        width: 48px;
+        height: 192px;
+        background: #ffffff;
+        box-shadow: 0px 2px 12px 1px rgba(29, 51, 107, 0.25);
+        border-radius: 3px;
+        & div{
+            border: 1px solid rgba(25, 68, 132, 0.1);
+            cursor: pointer;
+            & svg{
+                margin: 10px;
+                
+            }
+        }   
     }
 }
+
