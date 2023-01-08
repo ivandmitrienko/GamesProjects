@@ -9,5 +9,5 @@ import './fonts/fonts.scss';
   
 //   document.body.prepend(component('Проект собран на Webpack'));
 
-const inp = document.querySelector('.raiting__item')[0];
-console.log(inp)
+const inp = document.querySelectorAll('.raiting__item')[3];
+inp.addEventListener('click', ()=> console.log('fuck'));
