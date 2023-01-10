@@ -81,34 +81,48 @@
 .raiting {
     font-family: "MontserratWeight";
     font-size: 18px;
-    line-height: 38px;
     display: flex;
-    align-items: flex-end;
+    align-items: center;
 
     &__body {
         position: relative;
+        &::before{
+            content: '★★★★★';
+            display: block;
+            font-size: 28px;
+            color: rgba(225, 225, 225, 1);
+        }
     }
 
     &__active {
         position: absolute;
+        top: 0;
         left: 0;
-        width: 100%;
+        width: 0;
         height: 100%;
         overflow: hidden;
-    }
-
-    &__items {
-    }
-
-    &__item {
-        appearance: none;
+        color: rgba(6, 178, 95, 1);
         &::before{
-            content: url('./images/StarGray.svg');
-            
+            content: '★★★★★';
+            font-size: 28px;
         }
     }
 
+    &__items {
+        display: flex;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    &__item {
+        flex: 0 0 20%;
+        visibility: hidden;
+    }
+
     &__value {
-       padding: 0 5px 3px 0;
+       padding: 2px 5px 0 0;
     }
 }
