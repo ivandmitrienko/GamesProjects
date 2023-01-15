@@ -83,7 +83,6 @@
     font-size: 18px;
     display: flex;
     align-items: center;
-
     &__body {
         position: relative;
         &::before{
@@ -91,6 +90,7 @@
             display: block;
             font-size: 28px;
             color: rgba(225, 225, 225, 1);
+            
         }
     }
 
@@ -98,7 +98,7 @@
         position: absolute;
         top: 0;
         left: 0;
-        width: 0;
+        max-width: 125px;
         height: 100%;
         overflow: hidden;
         color: rgba(6, 178, 95, 1);
@@ -119,10 +119,12 @@
 
     &__item {
         flex: 0 0 20%;
-        visibility: hidden;
+        opacity: 0;
+        cursor: pointer;
     }
 
     &__value {
-       padding: 2px 5px 0 0;
+       width: 35px;
+       padding-top: 2px;
     }
 }

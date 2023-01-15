@@ -1,45 +1,49 @@
 import "./main.scss";
 import './fonts/fonts.scss';
 
-// function component(text) {
-//     const element = document.createElement('h1');
-//     element.textContent = text;
-//     return element;
-//   }
-
-//   document.body.prepend(component('Проект собран на Webpack'));
-
 const raitings = document.querySelectorAll('.raiting');
 if (raitings.length > 0) {
-    for (let index = 0; index < raitings.length; index++) {
+    for (let index = 0; index < raitings.length; index++) {//? one raiting
         setRaiting(raitings[index]);
+        setCurrentRaitingActiveValue(raitings[index]);
     }
 };
 
 function setRaiting(raiting) {
-    const raitingItems = raiting.querySelectorAll('.raiting__item');
-    for (let index = 0; index < raitingItems.length; index++) {
-        const raitingItem = raitingItems[index];
-        console.log(raitingItem);
-        raitingItem.addEventListener("mouseenter", () => {
-            console.log('fff')
-        })
-            //  initRaiting(raiting);
-            //  setRaitingActiveWidth(raitingItem.Value);
-        // )
-
-
-    }
+    const raitingAllItems = raiting.querySelector('.raiting__items');
+    raitingAllItems.addEventListener('click', () => setRaitingActiveValue(raiting));
+    const elem = raitingAllItems.getBoundingClientRect();
+    raitingAllItems.addEventListener('mouseenter', () => {
+        raitingAllItems.addEventListener('mousemove', (EO) => {
+            const activeWidth = EO.pageX - elem.left;
+            setRaitingActiveWidth(activeWidth);
+        });
+    });
+    raitingAllItems.addEventListener('mouseleave', () => {
+        raitingAllItems.removeEventListener('mousemove', (EO) => {
+            const activeWidth = EO.pageX - elem.left;
+            setRaitingActiveWidth(activeWidth);
+        });
+        setCurrentRaitingActiveValue(raiting);
+    })
 }
 
-// function initRaiting(raiting) {
-//     const raitingVars = {
-//         raitingValue: raiting.querySelector('.raiting__value'),
-//         raitingActive: raiting.querySelector('.raiting__active'),
-//     }
-// }
+function setRaitingActiveWidth(activeWidth) {
+    const raitingActive = document.querySelector('.raiting__active');
+    raitingActive.style.width = `${activeWidth}px`;
+}
 
-// function setRaitingActiveWidth(raitingVars) {
-//     const raitingActiveWidth = raitingVars.raitingValue.innerHTML / 0.05;
-//     raitingVars.raitingActive.style.width = `${raitingActiveWidth}%`
-// }
+function setRaitingActiveValue(raiting) {
+    const raitingValue = raiting.querySelector('.raiting__value');
+    const raitingActive = raiting.querySelector('.raiting__active');
+    const activeWidth = parseInt(raitingActive.style.width);
+    const newRaitingValue = `${(activeWidth * 100 / 125) * 0.05}`;
+    raitingValue.innerHTML = Number(newRaitingValue).toFixed(1)
+}
+
+function setCurrentRaitingActiveValue(raiting) {
+    const raitingValue = raiting.querySelector('.raiting__value');
+    const currentRaitingValue = Number(raitingValue.innerHTML);
+    const activeWidth = (currentRaitingValue / 0.05) * 125 / 100;
+    setRaitingActiveWidth(activeWidth);
+}
