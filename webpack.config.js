@@ -77,10 +77,6 @@ module.exports = {
             path: './src/partials/home.html',
             location: 'home',
             template_filename: ['index.html'],
-            // options: {
-            //     buttContact: 'CONTACT US',
-            //     buttMore: 'MORE',
-            // }
         }),
         new ExtraWatchWebpackPlugin({
             dirs: path.resolve(__dirname, 'src'),

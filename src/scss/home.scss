@@ -64,6 +64,9 @@
     }
 }
 .technologies-raiting {
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
     margin: 90px 0 120px 0;
     width: 898px;
     height: 138px;
@@ -75,6 +78,15 @@
         background: url("./images/Clutch.svg");
         width: 132px;
         height: 74px;
+    }
+    & button{
+        width: 258px;
+        height: 42px;
+        border-radius: 6px;
+        font-family: "MontserratWeight";
+        font-size: 16px;
+        color: rgba(225, 225, 225, 1);
+        background: #06b25f;
     }
 }
 
@@ -124,7 +136,13 @@
     }
 
     &__value {
-       width: 35px;
+       width: 45px;
        padding-top: 2px;
+    }
+
+    &__revies{
+        font-family: "Montserrat";
+        padding-top: 2px;
+        padding-left: 10px;
     }
 }
