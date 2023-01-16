@@ -78,6 +78,11 @@ module.exports = {
             location: 'home',
             template_filename: ['index.html'],
         }),
+        new HtmlWebpackPartialsPlugin({
+            path: './src/partials/services.html',
+            location: 'services',
+            template_filename: ['./src/partials/home.html'],
+        }),
         new ExtraWatchWebpackPlugin({
             dirs: path.resolve(__dirname, 'src'),
         }),
