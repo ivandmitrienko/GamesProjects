@@ -52,7 +52,6 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: path.join(__dirname, 'src', 'index.html'),
             filename: 'index.html',
-            minify: true
         }),
         new FileManagerPlugin({
             events: {
@@ -77,11 +76,6 @@ module.exports = {
             path: './src/partials/home.html',
             location: 'home',
             template_filename: ['index.html'],
-        }),
-        new HtmlWebpackPartialsPlugin({
-            path: './src/partials/services.html',
-            location: 'services',
-            template_filename: ['./src/partials/home.html'],
         }),
         new ExtraWatchWebpackPlugin({
             dirs: path.resolve(__dirname, 'src'),
