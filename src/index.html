@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -38,14 +39,15 @@
                         fill="#0D6EB7" />
                 </svg>
             </div>
-        </div>    
+        </div>
         <header></header>
         <main>
             <home></home>
         </main>
-        <div w3-include-html="./partials/services.html"></div>
-        <!-- <include></include> -->
-    
-    
+        <include src="partials/services.html" locals='{
+            "text": "Button"
+        }'></include>
+
+
     </div>
 </body>
