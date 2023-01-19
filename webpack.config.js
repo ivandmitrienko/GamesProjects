@@ -30,15 +30,7 @@ module.exports = {
             },
             {
                 test: /\.html$/i,
-                use: [
-                    {
-                      loader: 'html-loader',
-                      options: {
-                        minimize: true,
-                        interpolation: false
-                      }
-                    }
-                ]
+                loader: 'html-loader',
             },
             {
                 test: /\.svg$/,
