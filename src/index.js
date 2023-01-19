@@ -1,23 +1,6 @@
 import "./main.scss";
 import './fonts/fonts.scss';
 
-
-const { readFileSync } = require('fs')
-
-const posthtml = require('posthtml')
-const include = require('posthtml-include')
-
-const html = readFileSync('index.html')
-
-posthtml([include({ encoding: 'utf8' })])
-    .process(html)
-    .then((result) => console.log(result.html))
-
-
-
-
-
-
 const raitings = document.querySelectorAll('.raiting');
 if (raitings.length > 0) {
     for (let index = 0; index < raitings.length; index++) {//? one raiting
