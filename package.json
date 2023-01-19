@@ -13,7 +13,9 @@
     "type": "git",
     "url": "git+https://github.com/ivandmitrienko/GamesProjects.git"
   },
-  "keywords": [],
+  "keywords": [
+    "include"
+  ],
   "author": "",
   "license": "ISC",
   "bugs": {
@@ -47,8 +49,9 @@
     "webpack-cli": "^5.0.1",
     "webpack-dev-server": "^4.11.1"
   },
-  "dependencies": {
-    "posthtml": "^0.16.6",
-    "posthtml-include": "^1.7.4"
+  "browser": {
+    "fs": false,
+    "os": false,
+    "path": false
   }
 }
