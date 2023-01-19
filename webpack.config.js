@@ -66,7 +66,6 @@ module.exports = {
         new HtmlWebpackPartialsPlugin({
             path: './src/partials/header.html',
             location: 'header',
-            template_filename: ['index.html'],
             options: {
                 buttContact: 'CONTACT US',
                 buttMore: 'MORE',
@@ -74,8 +73,12 @@ module.exports = {
         }),
         new HtmlWebpackPartialsPlugin({
             path: './src/partials/home.html',
+            priority: 'high',
             location: 'home',
-            template_filename: ['index.html'],
+        }),
+        new HtmlWebpackPartialsPlugin({
+            path: './src/partials/services.html',
+            location: 'services',
         }),
         new ExtraWatchWebpackPlugin({
             dirs: path.resolve(__dirname, 'src'),
