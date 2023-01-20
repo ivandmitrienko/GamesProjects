@@ -73,7 +73,6 @@ module.exports = {
         }),
         new HtmlWebpackPartialsPlugin({
             path: './src/partials/home.html',
-            priority: 'high',
             location: 'home',
         }),
         new HtmlWebpackPartialsPlugin({
