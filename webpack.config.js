@@ -83,6 +83,14 @@ module.exports = {
             path: './src/partials/discuss.html',
             location: 'discuss',
         }),
+        new HtmlWebpackPartialsPlugin({
+            path: './src/partials/achievements.html',
+            location: 'achievements',
+        }),
+        new HtmlWebpackPartialsPlugin({
+            path: './src/partials/partners.html',
+            location: 'partners',
+        }),
         new ExtraWatchWebpackPlugin({
             dirs: path.resolve(__dirname, 'src'),
         }),
