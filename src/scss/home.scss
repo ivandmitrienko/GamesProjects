@@ -81,11 +81,9 @@
     }
     & button{
         width: 258px;
-        height: 42px;
-        border-radius: 6px;
-        font-family: "MontserratWeight";
         font-size: 16px;
         color: rgba(225, 225, 225, 1);
+        text-transform: uppercase;
         background: #06b25f;
     }
 }
@@ -101,8 +99,7 @@
             content: '★★★★★';
             display: block;
             font-size: 28px;
-            color: rgba(225, 225, 225, 1);
-            
+            color: rgba(225, 225, 225, 1);     
         }
     }
 

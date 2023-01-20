@@ -9,14 +9,6 @@ $contentPadding: 0 125px;
 .header {
     height: 100%;
     width: 100%;
-    & button {
-        width: 160px;
-        height: 42px;
-        @extend .MontserratWeight;
-        border: 2px solid #ffffff;
-        border-radius: 6px;
-        background: none;
-    }
     &-navigation {
         padding: $contentPadding;
         display: flex;
@@ -84,3 +76,11 @@ $contentPadding: 0 125px;
     } 
 }
 
+button {
+    width: 160px;
+    height: 42px;
+    @extend .MontserratWeight;
+    border: 2px solid #ffffff;
+    border-radius: 6px;
+    background: none;
+}
