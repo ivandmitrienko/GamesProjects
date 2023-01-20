@@ -20,6 +20,7 @@
                 font-size: 24px;
                 letter-spacing: 0.05em;
                 color: #0d6eb7;
+                margin-top: 79px;
             }
             &__text {
                 font-family: "Montserrat";
@@ -47,9 +48,9 @@
 .services-content-item:nth-of-type(3){
     background: url('images/services/MaskGroup1.svg');
 }
-// .services-content-item:nth-of-type(6){
-//     background: url('images/services/illustr.svg');
-// }
-// .services-content-item:nth-of-type(7){
-//     background: url('images/services/illustration4.svg');
-// }
+.services-content-item:nth-of-type(6){
+    background: url('images/services/Mask3.svg');
+}
+.services-content-item:nth-of-type(7){
+    background: url('images/services/Mask4.svg');
+}
