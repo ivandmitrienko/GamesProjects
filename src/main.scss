@@ -1,11 +1,26 @@
 @import "./scss/zeroing.scss";
 @import "./scss/header.scss";
-@import "./scss/home.scss";
-@import "./scss/services.scss";
 @import "./scss/discuss.scss";
-@import "./scss/achievements.scss";
-@import "./scss/partners.scss";
 
+.MontserratWeight {
+    font-family: "MontserratWeight";
+    font-size: 16px;
+    color: rgb(255, 255, 255);
+}
+
+.borderOfElementsForm {
+    background: #ffffff;
+    border: 1px solid #d7d7d7;
+    border-radius: 4px;
+}
+
+.button{
+    @extend .MontserratWeight;
+    border: 2px solid #ffffff;
+    border-radius: 6px;
+}
+
+//container
 .container {
     width: 100%;
     margin: 0 auto;
@@ -17,19 +32,460 @@
     & .contacts {
         position: fixed;
         right: 0;
-        top: calc(50% - 192px/2);
+        top: calc(50% - 192px / 2);
         width: 48px;
         height: 192px;
         background: #ffffff;
         box-shadow: 0px 2px 12px 1px rgba(29, 51, 107, 0.25);
         border-radius: 3px;
-        & div{
+        & div {
             border: 1px solid rgba(25, 68, 132, 0.1);
             cursor: pointer;
-            & svg{
-                margin: 10px;    
+            & svg {
+                margin: 10px;
             }
-        }   
+        }
     }
 }
 
+button {
+    @extend .button;
+    width: 160px;
+    height: 42px;
+    background: none;
+}
+
+// home page
+
+.titlePage {
+    font-family: "Harabara";
+    font-size: 36px;
+    line-height: 39px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #194484;
+}
+
+.home {
+    padding-top: 60px;
+    text-align: center;
+
+    h1 {
+        @extend .titlePage;
+    }
+
+    // technologies
+
+    .technologies {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        & h1 {
+            margin-bottom: 60px;
+        }
+        & p {
+            font-family: "Montserrat";
+            font-size: 24px;
+            line-height: 38px;
+            width: 898px;
+            height: 81px;
+            text-align: center;
+            color: rgba(36, 36, 36, 1);
+            margin-bottom: 30px;
+            & .first-word,
+            .second-word {
+                font-family: "MontserratWeight";
+                color: rgba(0, 164, 232, 1);
+            }
+            & .second-word {
+                color: rgba(25, 68, 132, 1);
+            }
+        }
+    }
+
+    .technologies-platforms {
+        min-width: 352px;
+        &-icons {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+            &__icon {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 64px;
+                height: 64px;
+                box-shadow: 0px 4px 12px rgba(41, 24, 111, 0.2);
+                border-radius: 16px;
+            }
+            &__icon:nth-child(1) {
+                background-color: rgba(6, 178, 95, 1);
+            }
+            &__icon:nth-child(2) {
+                background-color: rgba(39, 110, 216, 1);
+            }
+            &__icon:nth-child(3) {
+                background-color: rgba(132, 181, 255, 1);
+            }
+        }
+    }
+    .technologies-raiting {
+        justify-content: space-between;
+        align-items: center;
+        display: flex;
+        margin: 90px 0 120px 0;
+        width: 898px;
+        height: 138px;
+        background: #ffffff;
+        box-shadow: 0px 3px 16px 2px rgba(29, 51, 107, 0.15);
+        border-radius: 16px;
+        padding: 29px 33px 35px;
+        &__icon {
+            background: url("./images/Clutch.svg");
+            width: 132px;
+            height: 74px;
+        }
+        & button {
+            width: 258px;
+            font-size: 16px;
+            color: rgba(225, 225, 225, 1);
+            text-transform: uppercase;
+            background: #06b25f;
+        }
+    }
+
+    .raiting {
+        font-family: "MontserratWeight";
+        font-size: 18px;
+        display: flex;
+        align-items: center;
+        &__body {
+            position: relative;
+            &::before {
+                content: "★★★★★";
+                display: block;
+                font-size: 28px;
+                color: rgba(225, 225, 225, 1);
+            }
+        }
+
+        &__active {
+            position: absolute;
+            top: 0;
+            left: 0;
+            max-width: 125px;
+            height: 100%;
+            overflow: hidden;
+            color: rgba(6, 178, 95, 1);
+            &::before {
+                content: "★★★★★";
+                font-size: 28px;
+            }
+        }
+
+        &__items {
+            display: flex;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        &__item {
+            flex: 0 0 20%;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        &__value {
+            width: 45px;
+            padding-top: 2px;
+        }
+
+        &__revies {
+            font-family: "Montserrat";
+            padding-top: 2px;
+            padding-left: 10px;
+        }
+    }
+    // services
+    .fontHarabara {
+        font-family: "Harabara";
+        text-transform: uppercase;
+    }
+
+    .services {
+        width: 1127px;
+        margin: 0 auto;
+        &-content {
+            width: inherit;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            &-item {
+                width: 50%;
+                height: 395px;
+                margin-bottom: 36px;
+                & h2 {
+                    @extend .fontHarabara;
+                    font-size: 24px;
+                    letter-spacing: 0.05em;
+                    color: #0d6eb7;
+                    margin-top: 79px;
+                }
+                &__text {
+                    font-family: "Montserrat";
+                    font-size: 16px;
+                    line-height: 26px;
+                    color: #242424;
+                    text-align: left;
+                    padding-right: 12px;
+                    margin-top: 4px;
+                }
+            }
+        }
+        & h1 {
+            @extend .fontHarabara;
+            font-size: 36px;
+            letter-spacing: 0.1em;
+            color: #194484;
+            margin-bottom: 23px;
+        }
+    }
+
+    .services-content-item:nth-of-type(2) {
+        background: url("images/services/MaskGroup.svg");
+    }
+    .services-content-item:nth-of-type(3) {
+        background: url("images/services/MaskGroup1.svg");
+    }
+    .services-content-item:nth-of-type(6) {
+        background: url("images/services/Mask3.svg");
+    }
+    .services-content-item:nth-of-type(7) {
+        background: url("images/services/Mask4.svg");
+    }
+    //achievements
+    .achievements {
+        margin-bottom: 130px;
+        & h1 {
+            margin-bottom: 100px;
+        }
+    }
+    .achievements-items {
+        display: flex;
+        justify-content: center;
+        &__item {
+            width: 322px;
+            height: 400px;
+            border-radius: 16px;
+        }
+        &__item:nth-of-type(1) {
+            background: url("images/achievements/Card1.svg") 0 0 / cover no-repeat;
+        }
+        &__item:nth-of-type(2) {
+            background: url("images/achievements/Group351.svg") 0 0 / cover no-repeat;
+        }
+        &__item:nth-of-type(3) {
+            background: url("images/achievements/Group352.svg") 0 0 / cover no-repeat;
+        }
+        &__item:nth-of-type(4) {
+            background: url("images/achievements/Group353.svg") 0 0 / cover no-repeat;
+        }
+    }
+    //partners
+    .partners {
+        position: relative;
+        width: 100%;
+        height: 1412px;
+        background: url("images/Partners.svg");
+        & h1 {
+            position: absolute;
+            top: 243px;
+            left: 50%;
+            transform: translate(-50%, 0);
+        }
+        &-items {
+            position: absolute;
+            max-width: 1361px;
+            max-height: 760px;
+            top: 323px;
+            left: 50%;
+            transform: translate(-50%, 0);
+            display: grid;
+            grid-template: repeat(4, 1fr) / repeat(4, 25%);
+            row-gap: 40px;
+            column-gap: 12px;
+            &__item {
+                width: 322px;
+                height: 160px;
+                box-shadow: 0px 3px 16px 4px rgba(3, 6, 12, 0.1);
+                border-radius: 16px;
+                background-color: rgba(255, 255, 255, 1);
+            }
+            &__item:nth-of-type(1) {
+                background: url("images/partners/image 39.svg") center no-repeat,
+                    linear-gradient(rgba(255, 255, 255, 1));
+            }
+            &__item:nth-of-type(2) {
+                background: url("images/partners/image 40.svg") center no-repeat,
+                    linear-gradient(rgba(255, 255, 255, 1));
+            }
+            &__item:nth-of-type(3) {
+                background: url("images/partners/image 41.svg") center no-repeat,
+                    linear-gradient(rgba(255, 255, 255, 1));
+            }
+            &__item:nth-of-type(4) {
+                background: url("images/partners/image 42.svg") center no-repeat,
+                    linear-gradient(rgba(255, 255, 255, 1));
+            }
+            &__item:nth-of-type(5) {
+                background: url("images/partners/image 43.svg") center no-repeat,
+                    linear-gradient(rgba(255, 255, 255, 1));
+            }
+            &__item:nth-of-type(6) {
+                background: url("images/partners/image 44.svg") center no-repeat,
+                    linear-gradient(rgba(255, 255, 255, 1));
+            }
+            &__item:nth-of-type(7) {
+                background: url("images/partners/image 45.svg") center no-repeat,
+                    linear-gradient(rgba(255, 255, 255, 1));
+            }
+            &__item:nth-of-type(8) {
+                background: url("images/partners/image 46.svg") center no-repeat,
+                    linear-gradient(rgba(255, 255, 255, 1));
+            }
+            &__item:nth-of-type(9) {
+                background: url("images/partners/image 47.svg") center no-repeat,
+                    linear-gradient(rgba(255, 255, 255, 1));
+            }
+            &__item:nth-of-type(10) {
+                background: url("images/partners/image 48.svg") center no-repeat,
+                    linear-gradient(rgba(255, 255, 255, 1));
+            }
+            &__item:nth-of-type(11) {
+                background: url("images/partners/image 49.svg") center no-repeat,
+                    linear-gradient(rgba(255, 255, 255, 1));
+            }
+            &__item:nth-of-type(13) {
+                background: url("images/partners/image 50.svg") center no-repeat,
+                    linear-gradient(rgba(255, 255, 255, 1));
+            }
+            &__item:nth-of-type(14) {
+                background: url("images/partners/image 51.svg") center no-repeat,
+                    linear-gradient(rgba(255, 255, 255, 1));
+            }
+            &__item:nth-of-type(16) {
+                background: url("images/partners/image 52.svg") center no-repeat,
+                    linear-gradient(rgba(255, 255, 255, 1));
+            }
+        }
+    }
+    //contacts
+    .active-contacts {
+        position: relative;
+        width: 1199px;
+        height: 676px;
+        margin: 0 auto;
+        & h1 {
+            margin-bottom: 60px;
+        }
+        & p:nth-of-type(1) {
+            font-family: "MontserratWeight";
+            font-size: 24px;
+            line-height: 29px;
+        }
+        & p:nth-of-type(2) {
+            font-family: "Montserrat";
+            font-size: 16px;
+            line-height: 20px;
+            margin-top: 20px;
+        }
+    }
+    .active-contacts-company {
+        position: absolute;
+        height: 464px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        &-items {
+            width: 45%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            &__item {
+                display: flex;
+                font-family: "Montserrat";
+                font-size: 20px;
+                line-height: 24px;
+                & svg {
+                    margin-right: 21px;
+                }
+            }
+            &__item:not(:last-child) {
+                margin-bottom: 24px;
+            }
+        }
+        &__form {
+            margin-top: 44px;
+            background: url("images/contacts/Group1.svg") right 0 no-repeat, url("images/contacts/Vector2.svg") left 0 no-repeat,  url("images/contacts/Vector.svg") 0 bottom no-repeat;
+            width: 45%;
+            height: 90%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.9s ease-out 0.2s;
+            &:hover{
+                width: 50%;
+                height: 100%;
+            }
+            & form {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                width: 420px;
+                height: 400px;
+                background: #ffffff;
+                box-shadow: 0px 3px 16px 2px rgba(29, 51, 107, 0.15);
+                border-radius: 6px;
+                & input {
+                    @extend .borderOfElementsForm;
+                    width: 339px;
+                    height: 40px;
+                    margin-bottom: 20px;
+                }
+                & textarea {
+                    @extend .borderOfElementsForm;
+                    width: 339px;
+                    height: 80px;
+                    margin-bottom: 30px;
+                }
+
+                & input, textarea{
+                    font-family: serif;
+                    font-size: 18px;
+                    padding-left: 5px;
+                }
+
+                & input::placeholder, textarea::placeholder{
+                    padding: 10px 0 0 16px;
+                    color: #A9A9A9;
+                    font-size: 14px;
+                    line-height: 19px;
+                }
+                & button{
+                    width: 339px;
+                    height: 50px;
+                    @extend .button; 
+                    background: #2DA531; 
+                    text-transform: uppercase;  
+                }
+            }
+        }
+    }
+}

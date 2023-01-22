@@ -1,16 +1,19 @@
+//header
+
+$navigatePadding: 0 125px;
+
 .MontserratWeight {
     font-family: "MontserratWeight";
     font-size: 16px;
     color: rgb(255, 255, 255);
 }
 
-$contentPadding: 0 125px;
 
 .header {
     height: 100%;
     width: 100%;
     &-navigation {
-        padding: $contentPadding;
+        padding: $navigatePadding;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -39,8 +42,8 @@ $contentPadding: 0 125px;
             margin-top: 15px;
         }
     }
-    .content-container{
-        padding: $contentPadding;
+    .content-container {
+        padding: $navigatePadding;
         .header-content {
             margin-top: 97px;
             max-width: 551px;
@@ -66,21 +69,12 @@ $contentPadding: 0 125px;
                     margin-left: 24px;
                 }
             }
-            &__slider{  
+            &__slider {
                 width: 127px;
-                & svg:not(.last-child){
+                & svg:not(.last-child) {
                     margin-right: 20px;
                 }
             }
         }
-    } 
-}
-
-button {
-    width: 160px;
-    height: 42px;
-    @extend .MontserratWeight;
-    border: 2px solid #ffffff;
-    border-radius: 6px;
-    background: none;
+    }
 }

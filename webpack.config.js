@@ -72,24 +72,8 @@ module.exports = {
             }
         }),
         new HtmlWebpackPartialsPlugin({
-            path: './src/partials/home.html',
-            location: 'home',
-        }),
-        new HtmlWebpackPartialsPlugin({
-            path: './src/partials/services.html',
-            location: 'services',
-        }),
-        new HtmlWebpackPartialsPlugin({
             path: './src/partials/discuss.html',
             location: 'discuss',
-        }),
-        new HtmlWebpackPartialsPlugin({
-            path: './src/partials/achievements.html',
-            location: 'achievements',
-        }),
-        new HtmlWebpackPartialsPlugin({
-            path: './src/partials/partners.html',
-            location: 'partners',
         }),
         new ExtraWatchWebpackPlugin({
             dirs: path.resolve(__dirname, 'src'),
