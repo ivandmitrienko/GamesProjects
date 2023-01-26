@@ -3,27 +3,77 @@
     width: 100%;
     height: 707px;
     background: url("images/footer/Vector.svg") center/cover no-repeat,
-        url("images/footer/Vector2.svg") 0 -30px/100% 100% no-repeat;
+        url("images/footer/Vector2.svg") 0 -30px/100% 100% no-repeat;  
+    &-policy {
+        position: absolute;
+        bottom: 0;
+        height: 60px;
+        width: 100%;
+        background-color: #fff;
+        font-family: "Open Sans";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 19px;
+        color: #4C4C4C;
+        &__container{
+            max-width: 1286px;
+            height: 100%;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        &__cookies{
+            padding-right: 40px;
+            width: 323px;
+            display: flex;
+            justify-content: space-between;
+        }
+    }
     &-container {
         position: absolute;
         display: flex;
         width: 1286px;
         height: 277px;
         bottom: 60px;
-        left:50%;
+        left: 50%;
         transform: translate(-50%, 0);
-    }
-    &-icons {
-        max-width: 346px;
-        &__title {
-            background-color: brown;
-            // height: 54px;
-            // width: 100%;
-            // background: url("images/footer/stan.svg");
-            
+        &-navigation {
+            padding-top: 20px;
+            width: 940px;
+            display: flex;
+            justify-content: space-between;
+            & ul {
+                & li {
+                    margin-bottom: 18px;
+                    & a {
+                        color: rgb(255, 255, 255);
+                        font-family: "Montserrat";
+                        font-size: 16px;
+                    }
+                }
+            }
+            &__mainLink {
+                margin-bottom: 29px !important;
+                & a {
+                    font-family: "Harabara" !important;
+                    font-size: 20px !important;
+                    letter-spacing: 0.07em !important;
+                }
+            }
         }
-    }
-    .footer-container-navigation {
-        max-width: 940px;
+        &-icons {
+            width: 346px;
+            svg {
+                margin: 0 45px 44px 0;
+            }
+            &__title {
+                height: 54px;
+                width: 100%;
+                background: url("images/footer/stan.svg") no-repeat;
+                margin-bottom: 53px;
+            }
+        }
     }
 }
