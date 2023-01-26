@@ -1,5 +1,29 @@
-.footer{
+.footer {
+    position: relative;
     width: 100%;
     height: 707px;
-    background: url('images/footer/Vector.svg') center/cover no-repeat, url('images/footer/Vector2.svg') 0 -30px/100% 100% no-repeat;
+    background: url("images/footer/Vector.svg") center/cover no-repeat,
+        url("images/footer/Vector2.svg") 0 -30px/100% 100% no-repeat;
+    &-container {
+        position: absolute;
+        display: flex;
+        width: 1286px;
+        height: 277px;
+        bottom: 60px;
+        left:50%;
+        transform: translate(-50%, 0);
+    }
+    &-icons {
+        max-width: 346px;
+        &__title {
+            background-color: brown;
+            // height: 54px;
+            // width: 100%;
+            // background: url("images/footer/stan.svg");
+            
+        }
+    }
+    .footer-container-navigation {
+        max-width: 940px;
+    }
 }
