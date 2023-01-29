@@ -6,6 +6,16 @@ const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
 const HtmlWebpackPartialsPlugin = require('html-webpack-partials-plugin');
 const ExtraWatchWebpackPlugin = require('extra-watch-webpack-plugin'); // for partialls
 
+
+let htmlPageNames = ['sss'];
+let multipleHtmlPlugins = htmlPageNames.map(name => {
+    return new HtmlWebpackPlugin({
+        template: `./src/${name}.html`, // relative path to the HTML files
+        filename: `${name}.html`, // output HTML files
+        chunks: [`${name}`] // respective JS files
+    })
+});
+
 module.exports = {
     entry: path.join(__dirname, 'src', 'index.js'),
     output: {
@@ -31,6 +41,7 @@ module.exports = {
             {
                 test: /\.html$/i,
                 loader: 'html-loader',
+
             },
             {
                 test: /\.svg$/,
@@ -52,6 +63,7 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: path.join(__dirname, 'src', 'index.html'),
             filename: 'index.html',
+            chunks: ['main']
         }),
         new FileManagerPlugin({
             events: {
@@ -72,6 +84,13 @@ module.exports = {
             }
         }),
         new HtmlWebpackPartialsPlugin({
+            path: './src/partials/navigation.html',
+            location: 'navigation',
+            options: {
+                buttContact: 'CONTACT US',
+            }
+        }),
+        new HtmlWebpackPartialsPlugin({
             path: './src/partials/discuss.html',
             location: 'discuss',
         }),
@@ -82,7 +101,7 @@ module.exports = {
         new ExtraWatchWebpackPlugin({
             dirs: path.resolve(__dirname, 'src'),
         }),
-    ],
+    ].concat(multipleHtmlPlugins),
     devServer: {
         watchFiles: path.join(__dirname, 'src'),
         port: 3000,
