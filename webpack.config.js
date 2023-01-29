@@ -103,7 +103,9 @@ module.exports = {
         }),
     ].concat(multipleHtmlPlugins),
     devServer: {
-        watchFiles: path.join(__dirname, 'src'),
+        watchFiles:['src/**/*.html'],
+        hot: true,
+        // watchFiles: path.join(__dirname, 'src'),
         port: 3000,
     },
     optimization: {
