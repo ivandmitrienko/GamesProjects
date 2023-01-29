@@ -6,13 +6,19 @@ const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
 const HtmlWebpackPartialsPlugin = require('html-webpack-partials-plugin');
 const ExtraWatchWebpackPlugin = require('extra-watch-webpack-plugin'); // for partialls
 
-
-let htmlPageNames = ['sss'];
+// let htmlPageNames = ['services'];
+// let multipleHtmlPlugins = htmlPageNames.map(name => {
+//     return new HtmlWebpackPlugin({
+//         template: `./src/partials/pages/${name}.html`, // relative path to the HTML files
+//         filename: `${name}.html`, // output HTML files
+//         chunks: [`${name}`] // respective JS files
+//     })
+// });
+let htmlPageNames = ['services'];
 let multipleHtmlPlugins = htmlPageNames.map(name => {
-    return new HtmlWebpackPlugin({
-        template: `./src/${name}.html`, // relative path to the HTML files
-        filename: `${name}.html`, // output HTML files
-        chunks: [`${name}`] // respective JS files
+    return new HtmlWebpackPartialsPlugin({
+        path: `./src/partials/pages/${name}.html`, // relative path to the HTML files
+        location: `${name}`, // output HTML files
     })
 });
 
@@ -103,9 +109,7 @@ module.exports = {
         }),
     ].concat(multipleHtmlPlugins),
     devServer: {
-        watchFiles:['src/**/*.html'],
-        hot: true,
-        // watchFiles: path.join(__dirname, 'src'),
+        watchFiles: path.join(__dirname, 'src'),
         port: 3000,
     },
     optimization: {
