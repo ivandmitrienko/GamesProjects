@@ -6,6 +6,9 @@ const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
 const HtmlWebpackPartialsPlugin = require('html-webpack-partials-plugin');
 const ExtraWatchWebpackPlugin = require('extra-watch-webpack-plugin'); // for partialls
 
+// const { readFileSync } = require('fs');
+// const html = readFileSync('index.html');
+
 // let htmlPageNames = ['services'];
 // let multipleHtmlPlugins = htmlPageNames.map(name => {
 //     return new HtmlWebpackPlugin({
@@ -71,6 +74,11 @@ module.exports = {
             filename: 'index.html',
             chunks: ['main']
         }),
+        new HtmlWebpackPlugin({
+            template: path.join(__dirname, 'src', 'service.html'),
+            filename: 'service.html',
+            chunks: ['service']
+        }),
         new FileManagerPlugin({
             events: {
                 onStart: {
@@ -92,6 +100,13 @@ module.exports = {
         new HtmlWebpackPartialsPlugin({
             path: './src/partials/navigation.html',
             location: 'navigation',
+            options: {
+                buttContact: 'CONTACT US',
+            }
+        }),
+        new HtmlWebpackPartialsPlugin({
+            path: './src/partials/pages/navigation2.html',
+            location: 'navigation2',
             options: {
                 buttContact: 'CONTACT US',
             }
