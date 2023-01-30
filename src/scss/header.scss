@@ -79,3 +79,22 @@ $navigatePadding: 0 125px;
         margin-top: 15px;
     }
 }
+
+services .header-navigation{
+    &-logo{
+        width: 208px;
+        height: 52px;
+        background: url('images/services-page/title.svg');
+    }
+    & a{
+        color: #0D6EB7 !important;
+    }
+    & svg path{
+        fill: #0D6EB7;
+    }
+
+    & button{
+        border: 2px solid #06B25F;
+        color: rgba(6, 178, 95, 1);
+    }
+}
