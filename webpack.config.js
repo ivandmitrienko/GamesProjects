@@ -74,11 +74,6 @@ module.exports = {
             filename: 'index.html',
             chunks: ['main']
         }),
-        new HtmlWebpackPlugin({
-            template: path.join(__dirname, 'src', 'service.html'),
-            filename: 'service.html',
-            chunks: ['service']
-        }),
         new FileManagerPlugin({
             events: {
                 onStart: {
