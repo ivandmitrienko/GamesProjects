@@ -3,11 +3,8 @@ const path = require('path');
 const FileManagerPlugin = require('filemanager-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
-const HtmlWebpackPartialsPlugin = require('html-webpack-partials-plugin');
+// const HtmlWebpackPartialsPlugin = require('html-webpack-partials-plugin');
 const ExtraWatchWebpackPlugin = require('extra-watch-webpack-plugin'); // for partialls
-
-// const { readFileSync } = require('fs');
-// const html = readFileSync('index.html');
 
 // let htmlPageNames = ['services'];
 // let multipleHtmlPlugins = htmlPageNames.map(name => {
@@ -17,13 +14,13 @@ const ExtraWatchWebpackPlugin = require('extra-watch-webpack-plugin'); // for pa
 //         chunks: [`${name}`] // respective JS files
 //     })
 // });
-let htmlPageNames = ['services'];
-let multipleHtmlPlugins = htmlPageNames.map(name => {
-    return new HtmlWebpackPartialsPlugin({
-        path: `./src/partials/pages/${name}.html`, // relative path to the HTML files
-        location: `${name}`, // output HTML files
-    })
-});
+// let htmlPageNames = ['services'];
+// let multipleHtmlPlugins = htmlPageNames.map(name => {
+//     return new HtmlWebpackPartialsPlugin({
+//         path: `./src/partials/pages/${name}.html`, // relative path to the HTML files
+//         location: `${name}`, // output HTML files
+//     })
+// });
 
 module.exports = {
     entry: path.join(__dirname, 'src', 'index.js'),
@@ -48,8 +45,8 @@ module.exports = {
                 type: 'asset/resource',
             },
             {
-                test: /\.html$/i,
-                loader: 'html-loader',
+                test: /\.ejs$/i,
+                use: ['html-loader', 'template-ejs-loader'],
 
             },
             {
@@ -70,9 +67,9 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: path.join(__dirname, 'src', 'index.html'),
+            template: path.join(__dirname, 'src', 'index.ejs'),
             filename: 'index.html',
-            chunks: ['main']
+            // chunks: ['main']
         }),
         new FileManagerPlugin({
             events: {
@@ -84,40 +81,44 @@ module.exports = {
         new MiniCssExtractPlugin({
             filename: '[name].[contenthash:8].css',
         }),
-        new HtmlWebpackPartialsPlugin({
-            path: './src/partials/header.html',
-            location: 'header',
-            options: {
-                buttContact: 'CONTACT US',
-                buttMore: 'MORE',
-            }
-        }),
-        new HtmlWebpackPartialsPlugin({
-            path: './src/partials/navigation.html',
-            location: 'navigation',
-            options: {
-                buttContact: 'CONTACT US',
-            }
-        }),
-        new HtmlWebpackPartialsPlugin({
-            path: './src/partials/pages/navigation2.html',
-            location: 'navigation2',
-            options: {
-                buttContact: 'CONTACT US',
-            }
-        }),
-        new HtmlWebpackPartialsPlugin({
-            path: './src/partials/discuss.html',
-            location: 'discuss',
-        }),
-        new HtmlWebpackPartialsPlugin({
-            path: './src/partials/footer.html',
-            location: 'footer',
-        }),
+        // new HtmlWebpackPartialsPlugin({
+        //     path: './src/partials/header.html',
+        //     location: 'header',
+        //     options: {
+        //         buttContact: 'CONTACT US',
+        //         buttMore: 'MORE',
+        //     }
+        // }),
+        // new HtmlWebpackPartialsPlugin({
+        //     path: './src/partials/navigation.html',
+        //     location: 'navigation',
+        //     options: {
+        //         buttContact: 'CONTACT US',
+        //     }
+        // }),
+        // new HtmlWebpackPartialsPlugin({
+        //     path: './src/partials/navigation2.html',
+        //     location: 'navigation2',
+        //     options: {
+        //         buttContact: 'CONTACT US',
+        //     }
+        // }),
+        // new HtmlWebpackPartialsPlugin({
+        //     path: './src/partials/discuss.html',
+        //     location: 'discuss',
+        // }),
+        // new HtmlWebpackPartialsPlugin({
+        //     path: './src/partials/footer.html',
+        //     location: 'footer',
+        // }),
+        // new HtmlWebpackPartialsPlugin({
+        //     path: './src/partials/raiting.html',
+        //     location: 'raiting',
+        // }),
         new ExtraWatchWebpackPlugin({
             dirs: path.resolve(__dirname, 'src'),
         }),
-    ].concat(multipleHtmlPlugins),
+    ],
     devServer: {
         watchFiles: path.join(__dirname, 'src'),
         port: 3000,

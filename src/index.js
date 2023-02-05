@@ -1,7 +1,7 @@
 import "./main.scss";
 import './fonts/fonts.scss';
 
-const raitings = document.querySelectorAll('.raiting');
+const raitings = document.querySelectorAll('.raiting-stars');
 if (raitings.length > 0) {
     for (let index = 0; index < raitings.length; index++) {//? one raiting
         setRaiting(raitings[index]);
@@ -10,7 +10,7 @@ if (raitings.length > 0) {
 };
 
 function setRaiting(raiting) {
-    const raitingAllItems = raiting.querySelector('.raiting__items');
+    const raitingAllItems = raiting.querySelector('.raiting-stars__items');
     raitingAllItems.addEventListener('click', () => setRaitingActiveValue(raiting));
     const elem = raitingAllItems.getBoundingClientRect();
     raitingAllItems.addEventListener('mouseenter', () => {
@@ -29,20 +29,20 @@ function setRaiting(raiting) {
 }
 
 function setRaitingActiveWidth(activeWidth) {
-    const raitingActive = document.querySelector('.raiting__active');
+    const raitingActive = document.querySelector('.raiting-stars__active');
     raitingActive.style.width = `${activeWidth}px`;
 }
 
 function setRaitingActiveValue(raiting) {
-    const raitingValue = raiting.querySelector('.raiting__value');
-    const raitingActive = raiting.querySelector('.raiting__active');
+    const raitingValue = raiting.querySelector('.raiting-stars__value');
+    const raitingActive = raiting.querySelector('.raiting-stars__active');
     const activeWidth = parseInt(raitingActive.style.width);
     const newRaitingValue = `${(activeWidth * 100 / 125) * 0.05}`;
     raitingValue.innerHTML = Number(newRaitingValue).toFixed(1)
 }
 
 function setCurrentRaitingActiveValue(raiting) {
-    const raitingValue = raiting.querySelector('.raiting__value');
+    const raitingValue = raiting.querySelector('.raiting-stars__value');
     const currentRaitingValue = Number(raitingValue.innerHTML);
     const activeWidth = (currentRaitingValue / 0.05) * 125 / 100;
     setRaitingActiveWidth(activeWidth);

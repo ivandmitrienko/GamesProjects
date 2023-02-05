@@ -80,11 +80,11 @@ $navigatePadding: 0 125px;
     }
 }
 
-services .header-navigation{
+.services .header-navigation{
     &-logo{
         width: 208px;
         height: 52px;
-        background: url('images/services-page/title.svg');
+        background: url('images/title.svg');
     }
     & a{
         color: #0D6EB7 !important;
