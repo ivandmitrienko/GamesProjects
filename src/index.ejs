@@ -1,6 +1,34 @@
-
+<%- include('./partials/header.ejs') %>
         <section class="home-page">
-            <header></header>
+            <div class="header">
+                <div class="header-content">
+                    <h1>FOCUS ON THE PRODUCT AND LET US DO THE REST!</h1>
+                    <p>We’re an Indian software development
+                        company focused on just one thing -
+                        offshore software development services.
+                        We have 16+ years of experience and a team of 450+
+                        developers working efficiently to deliver unique solutions
+                        to start-ups, software development companies, enterprises,
+                        and digital agencies to simplify their IT outsourcing experience
+                        & reduce time/cost to market.
+                    </p>
+                    <div class="header-content__buttons">
+                        <%- include('./partials/button.ejs', { title: 'MORE' }) %>
+                        <%- include('./partials/button.ejs', { title: 'CONTACT US' }) %>
+                    </div>
+                    <div class="header-content__slider">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="10" cy="10" r="8.5" stroke="white" stroke-width="3" />
+                        </svg>
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="10" cy="10" r="8.5" stroke="white" stroke-width="3" />
+                        </svg>
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="10" cy="10" r="8.5" stroke="white" stroke-width="3" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
             <main>
                 <div class="home">
                     <section class="technologies">
@@ -42,7 +70,7 @@
                         <p>
                             Our engineers develop applications for the most popular platforms.
                         </p>
-                        <raiting></raiting>
+                        <%- include('./partials/raiting.ejs') %>
                     </section>
                     <section class="services">
                         <h1>Services</h1>
@@ -125,7 +153,7 @@
                             </div>
                         </div>
                     </section>
-                    <discuss></discuss>
+                    <%- include('./partials/discuss.ejs') %>
                     <section class="achievements">
                         <h1>achievements</h1>
                         <div class="achievements-items">
@@ -259,7 +287,5 @@
                     </section>
                 </div>
             </main>
-            <footer></footer>
         </section>
-    </div>
-</body>
+        <%- include('./partials/footer.ejs') %>

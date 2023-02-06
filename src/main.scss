@@ -1,6 +1,7 @@
 @import "./scss/zeroing.scss";
-@import "./scss/header.scss";
+@import "./scss/header-navigation.scss";
 @import "./scss/discuss.scss";
+@import "./scss//raiting.scss";
 @import "./scss/footer.scss";
 
 .MontserratWeight {
@@ -21,18 +22,50 @@
     border-radius: 6px;
 }
 
-.home-page {
-    display: block; //on time
-}
-
 //container
 .container {
     width: 100%;
     margin: 0 auto;
-    & header {
+    position: relative;
+    & .header {
+        position: inherit;
         width: 100%;
-        height: 939px;
+        height: 964px;
         background: url("./images/image1.svg") no-repeat;
+        &-content {
+            position: absolute;
+            top: 227px;
+            left: 126px;
+            max-width: 551px;
+            max-height: 454px;
+            & h1 {
+                font-family: "Harabara";
+                font-size: 44px;
+                line-height: 60px;
+                color: #ffffff;
+                letter-spacing: 0.06em;
+                margin-bottom: 16px;
+            }
+            & p {
+                @extend .MontserratWeight;
+                font-family: "Montserrat";
+                line-height: 26px;
+                margin-bottom: 40px;
+            }
+            &__buttons {
+                margin-bottom: 60px;
+                button:last-child {
+                    background: #06b25f;
+                    margin-left: 24px;
+                }
+            }
+            &__slider {
+                width: 127px;
+                & svg:not(.last-child) {
+                    margin-right: 20px;
+                }
+            }
+        }
     }
     & .contacts {
         position: fixed;
@@ -74,7 +107,6 @@ button {
 .home {
     padding-top: 60px;
     text-align: center;
-
     h1 {
         @extend .titlePage;
     }
@@ -419,93 +451,12 @@ button {
     }
 }
 
-//raiting-stars
-.raiting {
-    justify-content: space-between;
-    align-items: center;
-    display: flex;
-    margin: 90px 0 120px 0;
-    width: 898px;
-    height: 138px;
-    background: #ffffff;
-    box-shadow: 0px 3px 16px 2px rgba(29, 51, 107, 0.15);
-    border-radius: 16px;
-    padding: 29px 33px 35px;
-    &__icon {
-        background: url("./images/Clutch.svg");
-        width: 132px;
-        height: 74px;
-    }
-    & button {
-        width: 258px;
-        font-size: 16px;
-        color: rgba(225, 225, 225, 1);
-        text-transform: uppercase;
-        background: #06b25f;
-    }
-    &-stars {
-        font-family: "MontserratWeight";
-        font-size: 18px;
-        display: flex;
-        align-items: center;
-        &__body {
-            position: relative;
-            &::before {
-                content: "★★★★★";
-                display: block;
-                font-size: 28px;
-                color: rgba(225, 225, 225, 1);
-            }
-        }
-
-        &__active {
-            position: absolute;
-            top: 0;
-            left: 0;
-            max-width: 125px;
-            height: 100%;
-            overflow: hidden;
-            color: rgba(6, 178, 95, 1);
-            &::before {
-                content: "★★★★★";
-                font-size: 28px;
-            }
-        }
-
-        &__items {
-            display: flex;
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-
-        &__item {
-            flex: 0 0 20%;
-            opacity: 0;
-            cursor: pointer;
-        }
-
-        &__value {
-            width: 45px;
-            padding-top: 2px;
-        }
-
-        &__revies {
-            font-family: "Montserrat";
-            padding-top: 2px;
-            padding-left: 10px;
-        }
-    }
-}
-
 // services page
 .services {
     &-icon {
         background: url("images/services-page/servicesIcon.svg");
     }
-    raiting{
+    raiting {
         display: flex;
         align-items: center;
         justify-content: center;

@@ -1,0 +1,60 @@
+//header
+
+$navigatePadding: 0 125px;
+
+.MontserratWeight {
+    font-family: "MontserratWeight";
+    font-size: 16px;
+    color: rgb(255, 255, 255);
+}
+
+.header-navigation {
+    position: absolute;
+    padding: $navigatePadding;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.01);
+    &__links {
+        & ul {
+            display: flex;
+            justify-content: space-between;
+            width: 685px;
+            padding-top: 15px;
+            & li {
+                display: flex;
+                align-items: center;
+                cursor: pointer;
+                & a {
+                    @extend .MontserratWeight;
+                    line-height: 20px;
+                    margin-right: 5px;
+                }
+            }
+        }
+    }
+    &__contacts {
+        margin-top: 15px;
+    }
+}
+
+.services .header-navigation {
+    &-logo {
+        width: 208px;
+        height: 52px;
+        background: url("images/title.svg");
+    }
+    & a {
+        color: #0d6eb7 !important;
+    }
+    & svg path {
+        fill: #0d6eb7;
+    }
+
+    & button {
+        border: 2px solid #06b25f;
+        color: rgba(6, 178, 95, 1);
+    }
+}
