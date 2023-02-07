@@ -1,0 +1,45 @@
+.servicesIcons {
+    text-align: center;
+    width: 1359px;
+    height: 967px;
+    & h1{
+        margin-bottom: 70px;
+    }
+}
+
+.services-icons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 60px;
+    &__icon {
+        width: 322px;
+        height: 320px;
+        background: #f4f8fd;
+        box-shadow: 0px 3px 16px 4px rgba(29, 51, 107, 0.1);
+        border-radius: 16px;
+        margin-right: 23px;
+    }
+    &__icon:nth-of-type(1) {
+        background: url("images/servicesIcons/icon1.svg") center no-repeat;
+    }
+    &__icon:nth-of-type(2) {
+        background: url("images/servicesIcons/icon2.svg") center no-repeat;
+    }
+    &__icon:nth-of-type(3) {
+        background: url("images/servicesIcons/icon3.svg") center no-repeat;
+    }
+    &__icon:nth-of-type(4) {
+        background: url("images/servicesIcons/icon4.svg") center no-repeat;
+        margin-right: 0;
+    }
+    &__icon:nth-of-type(5) {
+        background: url("images/servicesIcons/icon5.svg") center no-repeat;
+    }
+    &__icon:nth-of-type(6) {
+        background: url("images/servicesIcons/icon6.svg") center no-repeat;
+    }
+    &__icon:nth-of-type(7) {
+        background: url("images/servicesIcons/icon7.svg") center no-repeat;
+    }
+}

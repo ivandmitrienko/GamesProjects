@@ -17,6 +17,11 @@ $navigatePadding: 0 125px;
     height: 80px;
     width: 100%;
     background: rgba(255, 255, 255, 0.01);
+    &-logo {
+        width: 208px;
+        height: 52px;
+        background: url("images/logo.svg");
+    }
     &__links {
         & ul {
             display: flex;

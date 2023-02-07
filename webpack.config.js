@@ -10,7 +10,6 @@ let multipleHtmlPlugins = htmlPageNames.map(name => {
     return new HtmlWebpackPlugin({
         template: `./src/${name}.ejs`, // relative path to the HTML files
         filename: `${name}.html`, // output HTML files
-        chunks: [`${name}`] // respective JS files
     })
 });
 
@@ -29,6 +28,7 @@ module.exports = {
                 exclude: /node_modules/,
             },
             {
+                
                 test: /\.(scss|css)$/,
                 use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'sass-loader'],
             },
@@ -61,7 +61,6 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: path.join(__dirname, 'src', 'index.ejs'),
             filename: 'index.html',
-            // chunks: ['main']
         }),
         new FileManagerPlugin({
             events: {
