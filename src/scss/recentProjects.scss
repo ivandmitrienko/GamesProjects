@@ -12,8 +12,15 @@
 }
 .recent-projects-items {
     width: 100%;
-    justify-content: space-between;
+    justify-content: space-evenly;
+    align-items: center;
     display: flex;
+    & .shevron{
+        cursor: pointer;
+    }
+    & div:nth-child(5) svg {
+       transform: rotate(180deg);
+    }
 }
 .recent-projects-item {
     width: 400px;
@@ -35,7 +42,7 @@
     &:nth-of-type(3) &__img {
         background: url("images/recentProjects/Group3.svg") center/105%;
     }
-    &__content{
+    &__content {
         padding: 20px 16px 20px;
     }
     &__tite {
