@@ -1,5 +1,6 @@
 import "./main.scss";
 import './fonts/fonts.scss';
+import './js/accardion.js';
 
 const raitings = document.querySelectorAll('.raiting-stars');
 if (raitings.length > 0) {
@@ -47,3 +48,6 @@ function setCurrentRaitingActiveValue(raiting) {
     const activeWidth = (currentRaitingValue / 0.05) * 125 / 100;
     setRaitingActiveWidth(activeWidth);
 }
+
+
+

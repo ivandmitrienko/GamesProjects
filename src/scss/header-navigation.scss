@@ -29,15 +29,35 @@ $navigatePadding: 0 125px;
             width: 685px;
             padding-top: 15px;
             & li {
+                position: relative;
                 display: flex;
                 align-items: center;
                 cursor: pointer;
+                &:hover::after{
+                    content: '';
+                    position: absolute;
+                    width: 100%;
+                    height: 3px;
+                    left: 0;
+                    right: 0;
+                    bottom: -5px;
+                    background-color: #00A4E8;;
+                }
+                & svg {
+                    transform: rotate(-180deg);
+                }
                 & a {
                     @extend .MontserratWeight;
                     line-height: 20px;
                     margin-right: 5px;
                 }
             }
+            & .active{
+                & svg{
+                    transform: rotate(0deg);
+                    transition: transform 0.65s ease-in-out;
+                } 
+            } 
         }
     }
     &__contacts {
