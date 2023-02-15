@@ -347,33 +347,26 @@ button {
     }
 }
 
-//services page
-.services {
-    &-icon {
-        background: url("images/services-page/servicesIcon.svg");
-    }
-    raiting {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-}
+// page
+
 .page {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 1359px;
     margin: 0 auto;
-    & .active-contacts{
+    & .active-contacts {
         margin-top: 180px;
     }
 }
-.page-title {
+.page-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 100%;
     & h1 {
+        max-width: 550px;
+        max-height: 120px;
         font-family: "Harabara";
         font-size: 44px;
         line-height: 60px;

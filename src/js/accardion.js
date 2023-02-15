@@ -15,3 +15,4 @@ arrLinks.forEach(el=>el.addEventListener('mouseenter', ()=>{
 arrLinks.forEach(el=>el.addEventListener('mouseleave', ()=>{
     el.classList.remove('active');
 }))
+
