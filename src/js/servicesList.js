@@ -1,4 +1,4 @@
-// import { servicesIcon } from './servicesIcon.js'
+import { servicesIcon } from './servicesIcon.js'
 const servicesNavigation = document.querySelector('.services-list');
 const servicesLinks = servicesNavigation.getElementsByTagName('li');
 const arrServicesLinks = Array.from(servicesLinks);
