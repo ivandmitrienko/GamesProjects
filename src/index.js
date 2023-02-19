@@ -1,8 +1,7 @@
 import "./main.scss";
 import './fonts/fonts.scss';
 import './js/accardion.js';
-import './js/history.js';
-// import './js/pageTiTleAndIcon.js';
+import './js/servicesList.js';
 
 const raitings = document.querySelectorAll('.raiting-stars');
 if (raitings.length > 0) {
