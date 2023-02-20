@@ -7,6 +7,5 @@ arrServicesLinks.forEach((el,i) => el.addEventListener('click', () => {
     const pageTitle = document.querySelector('.page-title');
     const pageIcon = document.querySelector('.page-icon');
     pageTitle.innerHTML = el.innerHTML;
-    pageIcon.style.background = `url(${servicesIcon[i]})`;
-
+    pageIcon.style.background = `url(${servicesIcon[i]}) center no-repeat`;
 }))

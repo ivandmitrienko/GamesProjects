@@ -4,6 +4,7 @@ const FileManagerPlugin = require('filemanager-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
 const ExtraWatchWebpackPlugin = require('extra-watch-webpack-plugin'); // for partialls
+const CopyPlugin = require("copy-webpack-plugin");// for copy folders
 
 let htmlPageNames = ['services'];
 let multipleHtmlPlugins = htmlPageNames.map(name => {
@@ -58,6 +59,11 @@ module.exports = {
         ],
     },
     plugins: [
+        new CopyPlugin({
+            patterns: [
+              { from: "src/images/servicesIcons", to: "icons" },
+            ],
+          }),
         new HtmlWebpackPlugin({
             template: path.join(__dirname, 'src', 'index.ejs'),
             filename: 'index.html',
