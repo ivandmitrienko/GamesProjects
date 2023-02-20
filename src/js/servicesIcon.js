@@ -1,1 +1,0 @@
-export const servicesIcon = ['icons/mobileApp.svg', 'icons/gameDev.svg', 'icons/vrApp.svg', 'icons/dedicateDev.svg', 'icons/sdkDev.svg', 'icons/sdk3Dmodel.svg', 'icons/arrAppDev.svg' ]

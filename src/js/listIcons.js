@@ -1,0 +1,2 @@
+export const servicesIcons = ['icons/mobileApp.svg', 'icons/gameDev.svg', 'icons/vrApp.svg', 'icons/dedicateDev.svg', 'icons/sdkDev.svg', 'icons/sdk3Dmodel.svg', 'icons/arrAppDev.svg' ],
+technologiesIcons = ['icons/Android.svg', 'icons/IOS.svg', 'icons/UNITY.svg']
