@@ -7,6 +7,7 @@
 @import "./scss/activeContacts";
 @import "./scss/recentProjects.scss";
 @import "./scss/FAQ.scss";
+@import "./scss/products";
 
 .MontserratWeight {
     font-family: "MontserratWeight";
@@ -386,6 +387,10 @@ button {
 }
 .technologies-icon{
     background: url('./images/technologiesIcons/Android.svg') center no-repeat;
+}
+
+.products-icon{
+    background: url('./images/productPageIcon.svg') center no-repeat;
 }
 
 .page-content {
