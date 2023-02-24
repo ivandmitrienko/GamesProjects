@@ -8,6 +8,7 @@
 @import "./scss/recentProjects.scss";
 @import "./scss/FAQ.scss";
 @import "./scss/products";
+@import "./scss/portfolio";
 
 .MontserratWeight {
     font-family: "MontserratWeight";
@@ -392,7 +393,9 @@ button {
 .products-icon{
     background: url('./images/productPageIcon.svg') center no-repeat;
 }
-
+.portfolio-icon{
+    background: url('./images/portfolioIcons/portfolio.svg') 0 60px no-repeat;
+}
 .page-content {
     width: 100%;
     display: flex;

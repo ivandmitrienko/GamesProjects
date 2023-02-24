@@ -6,7 +6,7 @@ const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
 const ExtraWatchWebpackPlugin = require('extra-watch-webpack-plugin'); // for partialls
 const CopyPlugin = require("copy-webpack-plugin");// for copy folders
 
-let htmlPageNames = ['services', 'technologies', 'products'];
+let htmlPageNames = ['services', 'technologies', 'products', 'products'];
 let multipleHtmlPlugins = htmlPageNames.map(name => {
     return new HtmlWebpackPlugin({
         template: `./src/${name}.ejs`, // relative path to the HTML files
