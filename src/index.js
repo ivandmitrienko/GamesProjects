@@ -2,6 +2,7 @@ import "./main.scss";
 import './fonts/fonts.scss';
 import './js/accardion.js';
 import './js/headerNavigatin.js';
+import './js/infinitySlaider.js';
 
 const raitings = document.querySelectorAll('.raiting-stars');
 if (raitings.length > 0) {
